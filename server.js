@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/public'));
 app.get('*', function(req, res) {
     res.sendfile('./public/index.html');
 });
-
+var port = process.env.PORT || 3000;
 console.log('listening on port 3000');
-app.listen(3000);
+app.listen(port);
 
