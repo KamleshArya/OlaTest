@@ -2,11 +2,11 @@
     <div class="panel panel-primary">
      <div class="panel-heading">{{ panelHeading }}</div>
         <div class="panel-body">
-            <form method="post">
+            <form method="post" ng-submit="createRequest()">
                 <div class="form-group">
                     <label class="col-md-3" style="margin-top: 5px;">Customer Id: </label>
                     <div class="col-md-5">
-                        <input class="form-control" type="text" placeholder="Set ID"/>
+                        <input class="form-control" ng-model="customerId" type="text" placeholder="Set ID"/>
                     </div>
                 </div>
                 <div class="form-group">
