@@ -11,5 +11,9 @@
    "npm":"3.7.x"
   },
   "author": "Kamlesh Meghwal",
-  "license": "ISC"
+  "license": "ISC",
+    "dependencies": {
+        "express": "^4.8.5",
+        "mongoose": "^3.8.15"
+    }
 }
