@@ -13,7 +13,6 @@
   "author": "Kamlesh Meghwal",
   "license": "ISC",
     "dependencies": {
-        "express": "^4.8.5",
-        "mongoose": "^3.8.15"
+        "express": "^4.8.5"
     }
 }
