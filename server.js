@@ -12,11 +12,10 @@ db.once('open',function callback(){
     console.log("db Opened");
 });
 app.use(express.static(__dirname + '/public'));
+require('./app/routes')(app);
 
-app.get('*', function(req, res) {
-    res.sendfile('./public/index.html');
-});
 var port = process.env.PORT || 3000;
 console.log('listening on port 3000');
 app.listen(port);
+exports = module.exports = app;
 
