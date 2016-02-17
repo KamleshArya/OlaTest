@@ -2,25 +2,15 @@
  * Created by Kamlesh on 14-Feb-16.
  */
 
-angular.module('CustomerCtrl', []).controller('CustomerController', function($scope, Customer) {
+angular.module('CustomerCtrl', []).controller('CustomerController', function($scope, $http) {
     $scope.panelHeading = 'Book a ride';
-    $scope.createRequest = function(){
-        Customer.create(this.customerId);
+    $scope.customerId = '';
+    $scope.createRequest = function() {
+        $http.post('/api/requests', $scope.customerId)
+            .success(function(data) {
+                console.log(data);
+            })
+            .error(function(data) {
+            });
     };
-//    $scope.createRequest = function(){
-//       var request = new Requests({
-//            requestId: this.customerId
-//            ,customerId: this.customerId
-//        });
-//        request.save( function(error, data){
-//            console.log("hello");
-//            if(error){
-//                res.json(error);
-//            }
-//            else{
-//                res.json(data);
-//            }
-//        });
-//        //console.log('hello ' + this.customerId + $Request);
-//    }
 });

@@ -9,26 +9,19 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>12103</td>
-        <td>3452</td>
-        <td>45 sec</td>
-        <td>Waiting</td>
-        <td>None</td>
-    </tr>
-    <tr>
-        <td>12102</td>
-        <td>3102</td>
-        <td>1 min 30 sec</td>
-        <td>Ongoing</td>
-        <td>234</td>
-    </tr>
-    <tr>
-        <td>12101</td>
-        <td>3049</td>
-        <td>4 min 45 sec</td>
-        <td>Complete</td>
-        <td>212</td>
+    <tr ng-repeat="request in requests">
+        <td>{{ request._id }}</td>
+        <td>{{ request.customerId }}</td>
+        <td>{{ request.timeElapsed }}</td>
+        <td>
+            <div ng-switch on="request.status">
+            <div ng-switch-when="1">Waiting</div>
+            <div ng-switch-when="2">On going</div>
+            <div ng-switch-when="3">Completed</div>
+            <div ng-switch-default>Waiting</div>
+            </div>
+        </td>
+        <td>{{request.driverId  ? request.driverId : 'None'}}</td>
     </tr>
     </tbody>
 </table>

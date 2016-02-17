@@ -5,7 +5,6 @@
 var mongoose = require('mongoose');
 
 var Request = mongoose.model('Request',new mongoose.Schema({
-    requestId : String,
     customerId : String,
     timeElapsed:Date,
     status:String,

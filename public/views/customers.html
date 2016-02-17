@@ -2,7 +2,7 @@
     <div class="panel panel-primary">
      <div class="panel-heading">{{ panelHeading }}</div>
         <div class="panel-body">
-            <form method="post" ng-submit="createRequest()">
+            <form method="post">
                 <div class="form-group">
                     <label class="col-md-3" style="margin-top: 5px;">Customer Id: </label>
                     <div class="col-md-5">
@@ -10,7 +10,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <input class="btn btn-primary" name="commit" type="submit" value="Ride Now">
+                    <button type="submit" class="btn btn-primary" ng-click="createRequest()">Ride Now</button>
                 </div>
             </form>
         </div>
