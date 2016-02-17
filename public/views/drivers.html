@@ -6,15 +6,33 @@
 
 <div class="tab-content">
     <div id="waiting" class="tab-pane fade in active">
-        <h3>Waiting</h3>
-        <p>Some content in menu 1.</p>
+        <form method="POST" ng-repeat="w in waiting">
+            <div class="form-group" >
+                <div class="col-md-8" >
+                    <div class="col-md-6"><b>Request Id:</b> {{w._id}}</div>
+                    <div class="col-md-6"><b>Customer Id:</b> {{w.customerId}}</div>
+                    <input type="text" ng-model="formData.requestId" value="w._id" style="display:none"/>
+                </div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary" ng-click="select(w._id)">Select</button>
+                </div>
+            </div>
+        </form>
     </div>
     <div id="ongoing" class="tab-pane fade">
-        <h3>Ongoing</h3>
-        <p>Some content in menu 2.</p>
+        <div class="form-group" ng-repeat="og in ongoing">
+            <div class="col-md-8" >
+                <div class="col-md-6"><b>Request Id:</b> {{og._id}}</div>
+                <div class="col-md-6"><b>Customer Id:</b> {{og.customerId}}</div>
+            </div>
+        </div>
     </div>
     <div id="completed" class="tab-pane fade">
-        <h3>Completed</h3>
-        <p>Some content in menu 3.</p>
+        <div class="form-group" ng-repeat="c in completed">
+            <div class="col-md-8" >
+                <div class="col-md-6"><b>Request Id:</b> {{c._id}}</div>
+                <div class="col-md-6"><b>Customer Id:</b> {{c.customerId}}</div>
+            </div>
+        </div>
     </div>
 </div>

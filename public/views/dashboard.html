@@ -12,7 +12,7 @@
     <tr ng-repeat="request in requests">
         <td>{{ request._id }}</td>
         <td>{{ request.customerId }}</td>
-        <td>{{ request.timeElapsed }}</td>
+        <td>{{ request.createdAt }}</td>
         <td>
             <div ng-switch on="request.status">
             <div ng-switch-when="1">Waiting</div>

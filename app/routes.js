@@ -12,10 +12,9 @@ module.exports = function(app) {
         });
     });
     app.post('/api/requests', function(req, res) {
-        console.log(req.customerId);
-        /*Requests.create({
-            customerId :req.customerId,
-            timeElapsed : Date.now(),
+        Requests.create({
+            customerId :req.body.customerId,
+            createdAt : Date.now(),
             status :1
         }, function(err, todo) {
             if (err)
@@ -25,9 +24,32 @@ module.exports = function(app) {
                     res.send(err)
                 res.json(requests);
             });
-        });*/
+        });
     });
-
+    app.get('/api/waiting',function(req,res){
+        Requests.find({status: "1"}, function(err, requests) {
+            if (err)
+                res.send(err)
+            res.json(requests);
+        });
+    });
+    app.get('/api/ongoing',function(req,res){
+        Requests.find({status: "2"}, function(err, requests) {
+            if (err)
+                res.send(err)
+            res.json(requests);
+        });
+    });
+    app.get('/api/completed',function(req,res){
+        Requests.find({status: "3"}, function(err, requests) {
+            if (err)
+                res.send(err)
+            res.json(requests);
+        });
+    });
+    app.post('/api/select', function(req, res) {
+        console.log("fdg" +req.body.requestId);
+    });
     app.get('*', function(req, res) {
         res.sendfile('./public/index.html');
     });

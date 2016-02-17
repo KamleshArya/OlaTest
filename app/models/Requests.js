@@ -4,11 +4,10 @@
 
 var mongoose = require('mongoose');
 
-var Request = mongoose.model('Request',new mongoose.Schema({
+module.exports = mongoose.model('Request',new mongoose.Schema({
     customerId : String,
-    timeElapsed:Date,
+    createdAt:Date,
+    updatedAt:Date,
     status:String,
     driverId:String
 }),'Request_data');
-
-module.exports = Request;
