@@ -6,7 +6,8 @@ var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-mongoose.connect('mongodb://localhost:27017/ola');
+//mongoose.connect('mongodb://localhost:27017/ola');
+mongoose.connect('mongodb://kkmeghwal:kamleshmeghwal@ds035300.mongolab.com:35300/kkmultivision');
 var db=mongoose.connection;
 db.on('error',console.error.bind(console,'connection error'));
 db.once('open',function callback(){
